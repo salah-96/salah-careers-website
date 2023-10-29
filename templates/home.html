@@ -10,19 +10,25 @@
         height: 360px;
         width: 100%;
         object-fit: cover;
+        margin-bottom: 16px;
       }
     </style>
 
   
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="https://salah-careers-website--sallad1.repl.co/static/banner.jpg" >
     <div class="container">
-      <h1 class="text-center mt-2 mb-4">{{company_name}} Careers' Spot</h1>
-      <img class="img-fluid" id="banner" src="https://salah-careers-website--sallad1.repl.co/static/banner.jpg" >
-  
       <h2 class="text-center mt-2 mb-4">About the company</h2>
-      <p class="lead"> Salah Careers' Spot is a leading company in the industry that aims to revolutionize the world of work. It offers exciting career opportunities for people who value innovation, collaboration, and diversity. Salah is also a community of passionate and talented people who believe that work should be meaningful, rewarding, and fun. Join Salah today and become part of the family!</p>
-      
+      <div class="row" style="margin-bottom:16px">
+        <div class="col-md-6">
+      <p class="lead"> Salah Careers' Spot is a leading company in the industry that aims to revolutionize the world of work. It offers exciting career opportunities for people who value innovation, collaboration, and diversity. Salah is also a community of passionate and talented people who believe that work should be meaningful, rewarding, and fun. Join Salah today and become part of the family!
+      </p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+        <img src="/static/people.jpg" style="height:320px; border-radius:4px;">
+      </div>
       <h2 class="text-center mt-2 mb-4">Job Openings</h2>
       <div>
         {% for job in jobs %}
@@ -30,9 +36,9 @@
         {% endfor %}
       </div>
       <div class="text-center">
-      <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2023, Salah</p>
+      <a class="btn btn-primary btn-lg" href='mailto:hello@salah.ai?subject=Question%20about%20Job%20Openings&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20questions%3A%20%3CEnter%20your%20questtion%20here%3E%0D%0A%0D%0A'>Contact Us</a>
       <div>
     </div>
+        {% include 'footer.html' %}
   </body>
 </html>
